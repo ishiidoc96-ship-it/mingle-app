@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1a1c1c",
+                      "on-primary-container": "#fff2f3",
+                      "on-surface-variant": "#5a4044",
+                      "surface-container": "#eeeeee",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "on-primary-fixed-variant": "#90003b",
+                      "surface-tint": "#bc004f",
+                      "on-secondary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#8d22a9",
+                      "primary": "#b0004a",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#ffd9de",
+                      "outline": "#8e6f74",
+                      "on-tertiary-fixed-variant": "#790096",
+                      "on-tertiary-fixed": "#340042",
+                      "primary-container": "#d81b60",
+                      "tertiary-fixed-dim": "#f3aeff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#3f0016",
+                      "secondary-fixed-dim": "#e9c400",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary": "#705d00",
+                      "secondary-fixed": "#ffe16d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "inverse-primary": "#ffb2bf",
+                      "tertiary-fixed": "#fdd6ff",
+                      "secondary-container": "#fcd400",
+                      "inverse-surface": "#2f3131",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#e3bdc3",
+                      "on-secondary-container": "#6e5c00",
+                      "surface-dim": "#dadada",
+                      "tertiary-container": "#a941c4",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#fff1fc",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "md": "24px",
+                      "xl": "64px",
+                      "container-max": "1200px",
+                      "gutter": "20px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-xl": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col md:flex-row antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Decorative Left Side for Desktop (Image) -->
+<div class="hidden md:block w-1/2 relative bg-surface-variant overflow-hidden shadow-2xl z-10">
+<div class="absolute inset-0 bg-cover bg-center object-cover" data-alt="A modern, high-end lifestyle photograph of a group of diverse young adults laughing and socializing in a chic, brightly lit urban cafe. The aesthetic is vibrant and optimistic, featuring light-mode friendly soft whites and greys with subtle pops of deep magenta and bright gold accents in their clothing and accessories, reflecting a premium social ecosystem." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCum4CCjYaXdxwWvz2_t2MWc-I7YF_9LptdVNFSHf_WB6x0OAWaFpQ7v8V8W78pTN78VczXZ2hPRKO9ZsQcZSMoKZ2XQwdhVe83uVYmGsoJRt-dTLxRp2Xudpkacogvct4FAYOu5aXA7k3uFanFo0aEIEPS1jKQqWngPRB3I7ix-1-BQJuprFg7q7QAlgGotsmZSEol9I2fr8Kv3kYsBmksqVyWhvM8tc1glfBmAN-6SMKQWdy3DHHiM_jaAilxGikRy5pHdbqfWIjS')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-variant/80 to-transparent"></div>
+<div class="absolute bottom-12 left-12 max-w-md">
+<h1 class="font-headline-xl text-headline-xl text-surface mb-4">Connect.<br/>Engage.<br/>Earn.</h1>
+<p class="font-body-lg text-body-lg text-surface-container-low opacity-90">Join the exclusive social network where your interactions generate real value.</p>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="w-full md:w-1/2 flex-1 flex flex-col justify-center px-gutter py-md relative z-20 md:min-h-screen">
+<!-- Mobile Header Spacer (Nav is suppressed as per rules for transactional page) -->
+<div class="md:hidden pt-8"></div>
+<div class="w-full max-w-[440px] mx-auto bg-surface-container-lowest md:bg-transparent md:shadow-none shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-2xl p-md md:p-0 relative">
+<!-- Brand Logo (Mobile only, simplified) -->
+<div class="mb-8 md:hidden text-center">
+<span class="font-headline-md text-headline-md font-bold text-primary">Mingle</span>
+</div>
+<!-- Headers -->
+<div class="mb-10 text-center md:text-left">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Create Account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Join the community and start earning.</p>
+</div>
+<!-- Sign Up Form -->
+<form action="#" class="space-y-6" method="POST">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="name">Full Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">person</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-variant rounded-xl focus:ring-1 focus:ring-primary focus:border-primary bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline transition-colors" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">mail</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-variant rounded-xl focus:ring-1 focus:ring-primary focus:border-primary bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline transition-colors" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Phone Field -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="phone">Phone Number</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">phone</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-variant rounded-xl focus:ring-1 focus:ring-primary focus:border-primary bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline transition-colors" id="phone" name="phone" placeholder="(555) 123-4567" required="" type="tel"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">lock</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-variant rounded-xl focus:ring-1 focus:ring-primary focus:border-primary bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline transition-colors" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Confirm Password Field -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="confirm_password">Confirm Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">lock_clock</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-variant rounded-xl focus:ring-1 focus:ring-primary focus:border-primary bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline transition-colors" id="confirm_password" name="confirm_password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Terms and Conditions -->
+<div class="flex items-start mt-4">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-primary focus:ring-primary border-outline rounded bg-surface-container-lowest" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-body-md text-body-md text-on-surface-variant text-sm" for="terms">I agree to the <a class="text-primary hover:text-primary-container font-semibold transition-colors" href="#">Terms of Service</a> and <a class="text-primary hover:text-primary-container font-semibold transition-colors" href="#">Privacy Policy</a>.</label>
+</div>
+</div>
+<!-- Primary Button -->
+<button class="w-full flex justify-center py-4 px-4 rounded-xl shadow-[0_10px_30px_rgba(216,27,96,0.2)] font-label-md text-label-md text-on-primary bg-gradient-to-b from-primary-container to-tertiary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary active:scale-[0.98] transition-all duration-200" type="submit">
+                    Continue
+                </button>
+</form>
+<!-- Footer Login Link -->
+<div class="mt-8 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Already have an account? 
+                    <a class="font-semibold text-primary hover:text-primary-container transition-colors" href="#">Login</a>
+</p>
+</div>
+</div>
+<!-- Mobile Bottom Spacer for Safe Area -->
+<div class="md:hidden pb-12"></div>
+</main>
+</body></html>

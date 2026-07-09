@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Mingle - Referral Code Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#fff2f3",
+                        "on-surface-variant": "#5a4044",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#ffb2bf",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#90003b",
+                        "surface-tint": "#bc004f",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#8d22a9",
+                        "primary": "#b0004a",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#ffd9de",
+                        "outline": "#8e6f74",
+                        "on-tertiary-fixed-variant": "#790096",
+                        "on-tertiary-fixed": "#340042",
+                        "primary-container": "#d81b60",
+                        "tertiary-fixed-dim": "#f3aeff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3f0016",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#705d00",
+                        "secondary-fixed": "#ffe16d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "inverse-primary": "#ffb2bf",
+                        "tertiary-fixed": "#fdd6ff",
+                        "secondary-container": "#fcd400",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e3bdc3",
+                        "on-secondary-container": "#6e5c00",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#a941c4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fff1fc",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "gutter": "20px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .gradient-btn {
+            background: linear-gradient(180deg, #D81B60 0%, #8E24AA 100%);
+            box-shadow: 0px 10px 30px rgba(216, 27, 96, 0.2);
+            transition: all 0.2s ease-in-out;
+        }
+        .gradient-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 12px 35px rgba(216, 27, 96, 0.3);
+        }
+        .gradient-btn:active {
+            transform: translateY(1px);
+        }
+        .code-input-glow:focus-within {
+            box-shadow: 0 0 0 2px #d81b6040;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased overflow-hidden flex flex-col">
+<!-- Header (Suppressed Navbar as this is a linear/transactional flow) -->
+<header class="w-full flex justify-between items-center px-gutter h-16 max-w-container-max mx-auto absolute top-0 z-50">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary font-bold">Mingle</span>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center p-gutter relative z-10 w-full max-w-container-max mx-auto mt-16">
+<!-- Decorative Background Blob -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] max-w-3xl max-h-[800px] opacity-30 pointer-events-none" style="background: radial-gradient(circle at center, #ffd9de 0%, transparent 70%);"></div>
+<div class="glass-panel w-full max-w-md rounded-[24px] p-lg flex flex-col items-center text-center relative z-20">
+<!-- Icon/Illustration -->
+<div class="w-20 h-20 rounded-full bg-primary-container/10 flex items-center justify-center mb-md text-primary-container">
+<span class="material-symbols-outlined text-[40px]" data-icon="redeem" style="font-variation-settings: 'FILL' 1;">redeem</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-base">Got a Referral Code?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl px-4">
+                Enter it here to help your friend earn KSh 500.
+            </p>
+<!-- Input Field -->
+<div class="w-full mb-xl">
+<label class="sr-only" for="referralCode">Referral Code</label>
+<div class="relative code-input-glow rounded-xl transition-all duration-200">
+<input class="w-full h-16 bg-surface-container-lowest border border-outline-variant text-center font-headline-md text-headline-md text-on-surface rounded-xl focus:border-primary focus:ring-0 uppercase tracking-widest placeholder:text-surface-dim transition-colors" id="referralCode" maxlength="10" placeholder="ENTER CODE" type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-md">
+<button class="gradient-btn w-full h-[56px] rounded-xl font-label-md text-label-md text-on-primary flex items-center justify-center">
+                    Continue
+                </button>
+<button class="text-primary font-label-md text-label-md hover:text-tertiary transition-colors">
+                    Continue without referral
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple script to automatically uppercase input and format it slightly if needed
+        const input = document.getElementById('referralCode');
+        input.addEventListener('input', function(e) {
+            this.value = this.value.toUpperCase();
+        });
+    </script>
+</body></html>

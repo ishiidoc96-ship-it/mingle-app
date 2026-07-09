@@ -1,0 +1,3 @@
+ALTER TABLE payments ADD COLUMN IF NOT EXISTS lipana_transaction_id TEXT;
+ALTER TABLE payments ADD COLUMN IF NOT EXISTS checkout_request_id TEXT UNIQUE;
+ALTER TABLE payments ADD COLUMN IF NOT EXISTS paid_at TEXT;

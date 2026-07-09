@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mingle Admin Panel</title>
+  <link rel="stylesheet" href="/admin/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">Mingle Admin</span>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+        <button class="nav-btn" data-tab="photos">Photo Manager</button>
+        <button class="nav-btn" data-tab="users">Users</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Not connected</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <!-- Dashboard -->
+      <section class="tab active" id="tab-dashboard">
+        <header class="topbar">
+          <h1>Dashboard</h1>
+          <div class="topbar-right">
+            <label class="token-label">
+              <span>Admin Secret</span>
+              <input type="text" id="tokenInput" placeholder="Enter admin secret..." autocomplete="off" />
+            </label>
+            <button class="btn btn-primary" id="connectBtn">Connect</button>
+          </div>
+        </header>
+        <div class="dashboard-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-label">Total Users</div>
+            <div class="stat-value" id="statUsers">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Users with Photos</div>
+            <div class="stat-value" id="statWithPhotos">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Users without Photos</div>
+            <div class="stat-value" id="statWithoutPhotos">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Local Photo Files</div>
+            <div class="stat-value" id="statLocalFiles">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Mapped Cloudinary URLs</div>
+            <div class="stat-value" id="statMapped">—</div>
+          </div>
+        </div>
+        <div class="quick-actions">
+          <h2>Quick Actions</h2>
+          <div class="action-grid">
+            <button class="btn btn-danger" id="clearPhotosBtn">🗑 Clear All Photos</button>
+            <button class="btn btn-success" id="seedPhotosBtn">📸 Seed All Photos</button>
+            <button class="btn btn-info" id="samplesBtn">🖼 View Photo Samples</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Manager -->
+      <section class="tab" id="tab-photos">
+        <header class="topbar">
+          <h1>Photo Manager</h1>
+          <div class="topbar-right">
+            <label class="token-label">
+              <span>Admin Secret</span>
+              <input type="text" id="tokenInputPhotos" placeholder="Enter admin secret..." autocomplete="off" />
+            </label>
+            <button class="btn btn-primary connect-btn-tab">Connect</button>
+          </div>
+        </div>
+        <div class="photo-controls">
+          <button class="btn btn-danger btn-large" id="clearPhotosBtnTab">🗑 Clear All Photos from Users</button>
+          <button class="btn btn-success btn-large" id="seedPhotosBtnTab">📸 Seed / Re-assign Photos to All Users</button>
+        </div>
+        <div class="progress-container" id="progressContainer" style="display: none;">
+          <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="result-box" id="resultBox" style="display: none;"></div>
+        <div class="recent-photos">
+          <h2>Recent Seeded Photos</h2>
+          <div class="photo-grid" id="photoGrid">
+            <div class="empty-state">Connect and click "View Photo Samples" to see recent photos</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Users -->
+      <section class="tab" id="tab-users">
+        <header class="topbar">
+          <h1>Users</h1>
+          <div class="topbar-right">
+            <button class="btn btn-primary" id="loadUsersBtn">Load Users</button>
+          </div>
+        </header>
+        <div class="search-bar">
+          <input type="text" id="userSearch" placeholder="Search by name or email..." />
+        </div>
+        <div class="table-wrapper">
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Photo</th>
+                <th>Admin</th>
+              </tr>
+            </thead>
+            <tbody id="usersTbody">
+              <tr><td colspan="5" class="empty-row">Click "Load Users" to see all users</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/admin/app.js"></script>
+</body>
+</html>

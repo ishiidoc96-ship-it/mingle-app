@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Referral Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#fff2f3",
+                        "on-surface-variant": "#5a4044",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#ffb2bf",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#90003b",
+                        "surface-tint": "#bc004f",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#8d22a9",
+                        "primary": "#b0004a",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#ffd9de",
+                        "outline": "#8e6f74",
+                        "on-tertiary-fixed-variant": "#790096",
+                        "on-tertiary-fixed": "#340042",
+                        "primary-container": "#d81b60",
+                        "tertiary-fixed-dim": "#f3aeff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3f0016",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#705d00",
+                        "secondary-fixed": "#ffe16d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "inverse-primary": "#ffb2bf",
+                        "tertiary-fixed": "#fdd6ff",
+                        "secondary-container": "#fcd400",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e3bdc3",
+                        "on-secondary-container": "#6e5c00",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#a941c4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fff1fc",
+                        "on-tertiary": "#ffffff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        sm: "12px",
+                        xs: "4px",
+                        base: "8px",
+                        md: "24px",
+                        xl: "64px",
+                        "container-max": "1200px",
+                        gutter: "20px",
+                        lg: "40px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .gradient-text {
+            background: linear-gradient(135deg, #d81b60, #8d22a9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(to bottom, #d81b60, #8d22a9);
+            color: #ffffff;
+            box-shadow: 0px 10px 30px rgba(216, 27, 96, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pb-safe">
+<!-- TopAppBar (md:hidden based on shell logic for mobile nav, but maintaining header typography) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a cheerful young adult with bright, natural lighting. The subject has an engaging smile, suggesting a modern, premium social networking context. The background is softly blurred in bright, airy tones reflecting a light-mode aesthetic with subtle hints of vibrant pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg31xYsspz5YqeJKbs9OMhod2mbCxZQd1RRhWTXUys_E0CMz1FIXxVfcTp4dgKpuht_39sfCLwFgGiT8CU5KsmXxG2c8xTIPrx34SxU-UtMp0LQYY8jvBsquHqDBEX1HvWf03Z6moatWFIW5Tf3J6ER1iHf3pg2RsFohWG7zx2xOteZABmuTMh9loy5capPv2i9CDlHFqKKLRKCwUL_AwcsEr7S6cF7ZOvbZpsFCCnvKyF99vh7q3F_FYtOomuJdM281tM-hUiczhV"/>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Mingle</h1>
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 px-gutter pb-32 max-w-container-max mx-auto w-full md:grid md:grid-cols-12 md:gap-md md:pt-32">
+<!-- Desktop Layout Wrapper -->
+<div class="md:col-span-8 md:col-start-3 space-y-lg">
+<!-- Page Title Area -->
+<div class="text-center mb-md">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-xs">Invite &amp; Earn</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Share the love and earn rewards for every successful matchmaker.</p>
+</div>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-2 gap-sm mb-lg">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-4xl mb-xs" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Total Earned</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface gradient-text">KSh 5,000</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-xs" style="font-variation-settings: 'FILL' 1;">group_add</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Successful</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface text-tertiary">10</p>
+</div>
+</div>
+<!-- Hero Referral Code Card -->
+<div class="bg-surface-container-lowest rounded-[24px] shadow-[0_10px_30px_rgba(216,27,96,0.1)] p-lg text-center relative overflow-hidden border border-primary-fixed/30">
+<!-- Decorative background blob -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-tertiary-container/10 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm uppercase tracking-widest">My Referral Code</h3>
+<div class="bg-surface p-md rounded-xl border border-outline-variant inline-block mb-md border-dashed">
+<span class="font-headline-xl text-headline-xl text-primary tracking-[0.1em]">MINGLE254</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-sm justify-center">
+<button class="btn-primary flex items-center justify-center gap-xs px-md h-[56px] rounded-xl font-label-md text-label-md w-full sm:w-auto active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">content_copy</span>
+                            Copy Link
+                        </button>
+<button class="bg-transparent border-[1.5px] border-primary text-primary flex items-center justify-center gap-xs px-md h-[56px] rounded-xl font-label-md text-label-md w-full sm:w-auto hover:bg-primary/5 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">share</span>
+                            Share via WhatsApp
+                        </button>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="mt-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Recent Activity</h3>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-sm">
+<ul class="space-y-base">
+<li class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Sarah J." class="w-full h-full object-cover" data-alt="A candid profile photo of a stylish user smiling brightly. Shot with a modern smartphone camera in a well-lit indoor environment with a clean, high-end minimalist aesthetic. Soft lighting emphasizes natural skin tones, reflecting a positive social networking vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYgKgxTQ7fhlPw2OFEnHXrYIJUD1W2aYgdEoadbCbmqzYT6aOdgKyJvwx5K7zoGddbh3_DjhNDNGOTfFsl6ufqiD-D0t8IrEPfLkZZEI256g_OHjRKtA8FPg_uFocN_geW6G5s7y34NVlPlCxo8-XZt2OYUzs7yyPIusnvlfoy7uEmncMh0lfEVcUjfwkVzp4yDGmcoY5xfju56qNNDgzLrWyqG5Coy52D6Rv9sF4tG-8PGuGa-UI_1eCDFr-98XuHBCqljeC_AWT9"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sarah J.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Joined yesterday</p>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+                                Earned KSh 500
+                            </div>
+</li>
+<li class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Michael K." class="w-full h-full object-cover" data-alt="A casual portrait of a young professional in an urban cafe setting, bathed in soft, natural daylight. The image has a high-quality, modern minimalist feel, consistent with a premium lifestyle platform. The background is slightly blurred." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATcEspVWd-acoz2shicPAcRZQ9uVpC_wU1ZUI0NP8Ctem0qb-RrFmjYIVHsV4tl9KjF547onoQx5hu3-6Ca5GjmiNbvfTiVpgKdvkP5IW8eQBs5Q8HrNEw0UizBelv2WsL_kfU2ZUTbaHkdkHBmKCVvaXE5Zgdq1vkAqKbB7UBxz4xF3_eeP337WOMRfvao-vKNIA_4-C9b8WmuVeVblD3lCxVJDXcmPbZx1Y8sRYnwZB7S9ogyKK2J1P5ruVySStqi4kuuGnj0bog"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Michael K.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Joined 3 days ago</p>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+                                Earned KSh 500
+                            </div>
+</li>
+<li class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors opacity-60">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Pending Invite</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sent to 0712***890</p>
+</div>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+                                Pending
+                            </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (md:hidden for responsive pivot) -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe md:hidden bg-surface/90 backdrop-blur-lg border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 w-full px-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Chats</span>
+</a>
+<!-- Active State: Referrals -->
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-primary-container/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Referrals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.db
+*.sqlite
+.env
+.env.local
+.env.*.local
+cloudinary_url_mapping.json
+.DS_Store
+*.db-journal
+.vercel/
+.vercel
+
+.vercel

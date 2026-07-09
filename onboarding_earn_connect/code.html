@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Onboarding</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1a1c1c",
+                    "on-primary-container": "#fff2f3",
+                    "on-surface-variant": "#5a4044",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed": "#221b00",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed-dim": "#ffb2bf",
+                    "on-background": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed-variant": "#90003b",
+                    "surface-tint": "#bc004f",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#8d22a9",
+                    "primary": "#b0004a",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#ffd9de",
+                    "outline": "#8e6f74",
+                    "on-tertiary-fixed-variant": "#790096",
+                    "on-tertiary-fixed": "#340042",
+                    "primary-container": "#d81b60",
+                    "tertiary-fixed-dim": "#f3aeff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#3f0016",
+                    "secondary-fixed-dim": "#e9c400",
+                    "surface-container-low": "#f3f3f3",
+                    "inverse-on-surface": "#f1f1f1",
+                    "secondary": "#705d00",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "inverse-primary": "#ffb2bf",
+                    "tertiary-fixed": "#fdd6ff",
+                    "secondary-container": "#fcd400",
+                    "inverse-surface": "#2f3131",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#e3bdc3",
+                    "on-secondary-container": "#6e5c00",
+                    "surface-dim": "#dadada",
+                    "tertiary-container": "#a941c4",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#fff1fc",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "md": "24px",
+                    "xl": "64px",
+                    "container-max": "1200px",
+                    "gutter": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Montserrat"
+                    ],
+                    "headline-md": [
+                            "Montserrat"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Montserrat"
+                    ],
+                    "headline-xl": [
+                            "Montserrat"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+        
+        .gradient-button {
+            background: linear-gradient(180deg, #D81B60 0%, #8E24AA 100%);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-sans antialiased overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Main Canvas Area - Full Screen Onboarding -->
+<main class="flex-grow flex flex-col justify-between max-w-container-max mx-auto w-full h-screen relative">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+<div class="absolute -top-[10%] -right-[10%] w-[50%] h-[40%] bg-primary-container opacity-[0.03] blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[20%] -left-[10%] w-[60%] h-[50%] bg-tertiary-container opacity-[0.03] blur-[120px] rounded-full"></div>
+</div>
+<!-- Top Header Area (Optional, for skip button if needed, left empty for minimal look as per prompt) -->
+<header class="flex justify-end p-gutter relative z-10 w-full">
+<button class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors py-2 px-4">Skip</button>
+</header>
+<!-- Center Content: Graphic & Headline -->
+<div class="flex-grow flex flex-col items-center justify-center px-gutter md:px-xl relative z-10 w-full mb-8">
+<!-- Illustration Area -->
+<div class="w-full max-w-md aspect-square relative mb-xl flex items-center justify-center">
+<!-- Abstract floating coins and connections graphic -->
+<div class="relative w-full h-full flex items-center justify-center">
+<!-- Central Node -->
+<div class="absolute z-20 w-32 h-32 rounded-full glass-card flex items-center justify-center animate-[bounce_4s_infinite_ease-in-out]">
+<img class="w-24 h-24 rounded-full object-cover" data-alt="A diverse group of modern young professionals smiling and interacting digitally. High-end lifestyle photography, bright, optimistic lighting, clean white background with soft shadows. Vibrant minimalist style, expressing connection and success in a premium social network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyZNnC8OyyR4mNr-Xta_u6f5QwnAe-AjGsLahAeePgWZLXTX5Avtip_HqNYtwjNH5mZykObdehlZ71DlLR0-zdAvZNVFvyFGuVJ9OMZX0OT_ImHsCgHqhMg68Z8ROljwrBVA3Tr6wSsaya_CnQBxd-cwZ33PvbNaCebzjt26eSKq1oNGwYdtt62oFQNTpothhOAlqntZ_3IkJknppp1fk5TZsdBK5zz-ssat9On5PbwiMG6uLidlCIH46WvphjURjblWOZklIV1qcX"/>
+</div>
+<!-- Orbiting Nodes -->
+<div class="absolute top-10 left-10 z-10 animate-[bounce_5s_infinite_ease-in-out_0.5s]">
+<div class="w-16 h-16 rounded-full glass-card flex items-center justify-center shadow-[0_10px_30px_rgba(216,27,96,0.15)]">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+</div>
+<div class="absolute bottom-16 right-10 z-10 animate-[bounce_6s_infinite_ease-in-out_1s]">
+<div class="w-14 h-14 rounded-full glass-card flex items-center justify-center shadow-[0_10px_30px_rgba(141,34,169,0.15)]">
+<span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+</div>
+<div class="absolute top-1/2 -left-4 z-10 animate-[bounce_4.5s_infinite_ease-in-out_0.2s]">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Connecting Lines (Abstract SVG) -->
+<svg class="absolute inset-0 w-full h-full text-outline-variant/50 z-0" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M50 50 Q 20 20 15 35" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<path d="M50 50 Q 80 80 85 65" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<path d="M50 50 Q 10 50 0 50" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+<!-- Typography -->
+<div class="text-center max-w-sm md:max-w-xl mx-auto space-y-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                    Build your network while growing your earnings.
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mx-auto">
+                    Connect with quality matches and earn rewards for meaningful interactions within our premium ecosystem.
+                </p>
+</div>
+</div>
+<!-- Bottom Action Area (Buttons & Pagination) -->
+<div class="w-full px-gutter pb-[calc(24px+env(safe-area-inset-bottom))] pt-md relative z-10 bg-gradient-to-t from-surface via-surface to-transparent">
+<div class="max-w-md mx-auto space-y-md">
+<!-- Pagination Dots -->
+<div class="flex justify-center items-center space-x-2 mb-md">
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-6 h-2 rounded-full bg-primary transition-all duration-300"></div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-[56px] gradient-button rounded-xl flex items-center justify-center font-label-md text-label-md text-on-primary shadow-[0_10px_30px_rgba(216,27,96,0.2)] hover:shadow-[0_10px_35px_rgba(216,27,96,0.3)] active:scale-[0.98] transition-all duration-200">
+                    Get Started
+                </button>
+<!-- Secondary Link -->
+<div class="text-center mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Already have an account?</span>
+<button class="font-label-md text-label-md text-primary ml-1 hover:text-primary-container transition-colors">
+                        Login
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

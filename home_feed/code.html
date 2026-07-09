@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Home Feed</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1a1c1c",
+                      "on-primary-container": "#fff2f3",
+                      "on-surface-variant": "#5a4044",
+                      "surface-container": "#eeeeee",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "on-primary-fixed-variant": "#90003b",
+                      "surface-tint": "#bc004f",
+                      "on-secondary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#8d22a9",
+                      "primary": "#b0004a",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#ffd9de",
+                      "outline": "#8e6f74",
+                      "on-tertiary-fixed-variant": "#790096",
+                      "on-tertiary-fixed": "#340042",
+                      "primary-container": "#d81b60",
+                      "tertiary-fixed-dim": "#f3aeff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#3f0016",
+                      "secondary-fixed-dim": "#e9c400",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary": "#705d00",
+                      "secondary-fixed": "#ffe16d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "inverse-primary": "#ffb2bf",
+                      "tertiary-fixed": "#fdd6ff",
+                      "secondary-container": "#fcd400",
+                      "inverse-surface": "#2f3131",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#e3bdc3",
+                      "on-secondary-container": "#6e5c00",
+                      "surface-dim": "#dadada",
+                      "tertiary-container": "#a941c4",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#fff1fc",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "md": "24px",
+                      "xl": "64px",
+                      "container-max": "1200px",
+                      "gutter": "20px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-xl": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .bg-gradient-match-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-container-max mx-auto">
+<!-- Leading Avatar -->
+<div class="w-10 h-10 rounded-full overflow-hidden hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-200 cursor-pointer">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A bright, modern headshot of an optimistic young professional smiling warmly in a beautifully lit minimalist cafe. The lighting is soft and flattering, casting gentle shadows. They are wearing a casual yet stylish outfit in neutral tones with a subtle pop of deep pink, aligning with a high-end matchmaking brand identity. The background is softly blurred." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJUZO0pgJRa8uYfvsrxwrV-PfXUENMuMGCalbWT8NXu-RLwxDB4IS4OmaDwL6K0BSjAySy2w_7VJRtDak9ajp29otpvoEnD_tqpxNYws6M1txZ0ZHMAgZrOjQVeI59CX2CcWj1M7JKYNCSLtjkS_5V1CpRNZljAgnOvXYDXY5QvSThgHtVfaYLsaMSwoFQqvnpmxKsuhryE6eG9BuQWH4TDvbzHU9YlA7DmDIPz6Sz-mka5e3UudM68hkh3GZTnpJb-baBTXu71U-C"/>
+</div>
+<!-- Headline -->
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim md:font-headline-lg md:text-headline-lg tracking-tight">
+                Mingle
+            </div>
+<!-- Trailing Icon -->
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 px-gutter max-w-container-max mx-auto">
+<!-- Trending Near You -->
+<section class="mb-lg">
+<h2 class="font-headline-md text-headline-md mb-md text-on-surface">Trending Near You</h2>
+<div class="flex overflow-x-auto gap-md no-scrollbar pb-sm -mx-gutter px-gutter md:mx-0 md:px-0">
+<!-- Story/Trending Item 1 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="Elena" class="w-full h-full object-cover" data-alt="A portrait of a charismatic person laughing outdoors in a sunlit park setting. The photo feels vibrant, candid, and high-quality, fitting for a modern dating app. The light creates a warm glow around them, and their expression is joyful and approachable. The background is a soft blur of green and gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTeOWUf1QCJQ7qPZZygX_CVyPDeBjw-RwciHu3WdU6yHgdz5hdCc6j5FoYNBn-z19UiDTRYbAeodlpseo-3Kubqnz0P-5dRjSL6j662roDd6HOtlAlu7vgbQ_uqFnbEWD2pzB98BrSj4M0XvpcGtbE7lqGgUfRLhz3yhQAG9-kubFkSc3mFacBHOm5wCNAGtVaTuKqcDcH6iTjar8wTnjiRuT-YBDm5UElsENdtGRN0ZpxUaqpxIRzqGyU_a8QH_cbVfCU-t7Od_oE"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Elena</span>
+</div>
+<!-- Story/Trending Item 2 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="Marcus" class="w-full h-full object-cover" data-alt="A stylish portrait of an individual standing against a sleek, modern architectural background. They are wearing fashionable, minimalist clothing. The lighting is dramatic yet flattering, highlighting their confident expression. The overall mood is sophisticated and exclusive, reflecting a premium social ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzUE1F0NEYhOj0iAW9MOz_tJI2agc0q41bt4tUrudYRlLnwz-YIDeC-9XJo9jqriAGDL_aNRVk4W6YpGgZ0EfiunmLTu7Npn70LXygqtUvHBrUhnJpEWYDvId4SD1g3h8HFxdB3qr685YsVk27NLptQ8AfAJGd7tbzZgW0vX-wq-GeCPIvlcEf9E87ClWU5ET-YW18ahDKeBRQ71cC5oOwdz2hcUSWTx9dWHYm2MEdsGl339OS4DuHvo_4ULcKh-cFOch-kFuea-BU"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Marcus</span>
+</div>
+<!-- Story/Trending Item 3 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="Sarah" class="w-full h-full object-cover" data-alt="Close up photo of an adventurous looking person in front of a slightly blurred mountain range. They look happy and engaged, wearing subtle outdoor gear that still looks stylish. The lighting suggests early morning or late afternoon golden hour. The image conveys an active, exciting lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRAKZk6RlKcBVfOkjUJkKQK2ZCRyg7lQeg7X10agkDlhJdIiyAe4R6a17xJzfkx-5OSgBQ1Vw8zE3bioujmnpuhr5KEbvgpP4pr7aadSM0zYL7lNpnFAyD9S-DuAguh5SCqSPqJAKEjQOxR9uCO-Lfo96Wp8mZZhjvH_-gKrcTDL88iVXo51Q-mE49V7qDuis7iHa3jL0NNPKmoZz13L8SiBIQ37Q8tXv1Ryr6VXhTku9zyuNdE2nvR32hyTgZN5fBU4oydL466ufM"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Sarah</span>
+</div>
+<!-- Story/Trending Item 4 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="David" class="w-full h-full object-cover" data-alt="Artistic portrait of a creative individual in a brightly lit studio environment. They are smiling softly, surrounded by hints of art supplies in a minimalist arrangement. The colors are bright and optimistic, with soft, ambient shadows giving the scene depth and a tactile feel. A very modern, professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZGREuFbdezb7IMi7IB_ruPkUEa51wQMlYcGRKW84GuaZGw--l1yCqXfiRVRZDQRsBJcmb62FX7O5Ngkd215UyrPCJm_7IkdeHiB4Lpz2SNP3Ha8Q5q7m-mRgmz50Gk7opHcaPNBqSckyN-EZcTfhMx0FNgHNN_mYQg-bZxnrktlbUMB6C9ElkDYIxsnJe140MGTbvlyhwUztWcKkTCyju94nN8EY0Q4orRmhr7OvEW9GxScS2N5kNHJmPemig7SCf9pXmfUiI0_s3"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">David</span>
+</div>
+<!-- Story/Trending Item 5 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="Chloe" class="w-full h-full object-cover" data-alt="Candid portrait of someone holding a coffee cup in a bustling, chic urban cafe. The depth of field is shallow, keeping the focus entirely on their warm, engaging smile. The lighting is natural and bright, conveying a sense of casual sophistication and modern social life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwIIr8KBaW3ufHHFTqr5VU360KM7A3VgzgxdHQRuyTZpFWJa5b9OR6AfUrJfCWAW1Vd7l3cOI_wGdN-QZB26q8VLWjl5UHErOUh6t43-swe8HqXUpK0K6ZJYcI1HLvSJBQcvbo8XpCiTQ3vOWjxDymVl1LYA4IMsXFiAaSUpOsgy4mG0CmVJMpFyQndmlQymbnpZmhCWr2qcEqobMKTCo1KdnO1VHrDKv6nkGZ4Xhwjq2UtrDc4CGWZgRbAMdcynca5Jl1l_XbaYBW"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Chloe</span>
+</div>
+<!-- Story/Trending Item 6 -->
+<div class="flex flex-col items-center gap-base min-w-[72px] cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-tertiary">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden group-hover:scale-105 transition-transform">
+<img alt="James" class="w-full h-full object-cover" data-alt="A portrait of an elegant person at an evening event, softly lit by ambient city lights. The aesthetic is slightly darker but very premium, highlighting their refined style and a sense of exclusivity. Subtle hints of deep magenta or gold are reflected in the background blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCaRTM2I8X_HZa6usexWNPY5dhMhTtqIHilkkDTWM98BOK5qArJwGOlf5FYKuIWk7SbgbVNEjGhDdF3HpZTLhV0a7l1UynKpNTfOGtJ2shzDGpxDND6UMsGrMBJaB5f-OmVmN6DW2lNWmwiZt73c8lHzo35bo2O6hbSyAUplCB_1Uima9wIV52E5vU_WD-YC6j6aTw9H2t1zfWZaImywI7jmrmze23Wlvq7E9NeT1WMewZS-hcyT6flyaNwOJbQFR-S9p4293HyzIB"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">James</span>
+</div>
+</div>
+</section>
+<!-- Suggestions (Hero Cards) -->
+<section class="mb-lg">
+<h2 class="font-headline-md text-headline-md mb-md text-on-surface">Suggestions</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Hero Match Card 1 -->
+<div class="relative w-full h-[450px] rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer group">
+<img alt="Match Suggestion" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stunning, high-fashion style portrait of a person in a bright, modern setting with expansive whitespace. They are wearing chic, minimalist clothing. The lighting creates soft, sophisticated ambient shadows. The mood is vibrant, optimistic, and highly professional, perfect for a hero card on a premium matchmaking platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5yBnmdPRkCM0OjVgzv7e7GHIR9mjtU2G3QVcFtTHK49_7J_zcPhrLzlAZzKZCXgbcXYy4S4KsMSOVlEmtD3wBEGDoqT3idm5aFIfkNYE3wgTPvN_JkYs-DfuqWjdfWgv43Uo4d0aDBDmlDYccSvetMFdG_rnN-d_h5z9WIeA833B0n1Ev-OtzsrMUOvD089rU3LT1D3SEZra3lUFWVHAOHvxgVLyAcz4LedHEoRrYsKLBoKAM2sJad3M6SePgAxIo03NdN8_qE9wA"/>
+<div class="absolute inset-0 bg-gradient-match-overlay"></div>
+<div class="absolute bottom-0 left-0 w-full p-md flex flex-col justify-end">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white font-bold flex items-center gap-xs">
+                                    Aisha, 26
+                                    <span class="material-symbols-outlined text-[20px] text-primary" data-icon="verified">verified</span>
+</h3>
+<p class="font-body-md text-body-md text-white/90">Designer • 2 miles away</p>
+</div>
+<!-- FAB -->
+<button class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-[0_10px_30px_rgba(216,27,96,0.2)] hover:bg-surface-container-low transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[28px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="flex gap-base flex-wrap">
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Art Galleries</span>
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Coffee</span>
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Indie Pop</span>
+</div>
+</div>
+</div>
+<!-- Hero Match Card 2 (Hidden on smaller screens, shown in grid on larger) -->
+<div class="hidden md:block relative w-full h-[450px] rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer group">
+<img alt="Match Suggestion" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A dynamic portrait of a confident person in a modern urban environment. They are standing near a glass building, and the reflection adds depth to the image. The lighting is crisp and natural. The overall vibe is successful, energetic, and sophisticated, aligning with a high-end social app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0cC0F8Wr6gM-bDWEfoTNP_JhIkx61AZ79TjSiuco8kC3KKwOD4C16yBCZNDP6GHbJr5EoXC9n0JaXjE-rO0ELaOJ8KyKHbeQPiujHz-DV9-ArLFFCOQ0Y9j7GZ0jO7SGLggwboetiimN-bqclrxxwaNZh3tOaeILYLB38SD3Xmtf-Q7j-35HACaaJvYtJT-XU_sqR0vjtbt-yC9pAQDOVZ1j5dtT9NA3ny07PUNXqhEiOAfqkDAeKUe3twVQNGQ0FNngv8_SFGoXq"/>
+<div class="absolute inset-0 bg-gradient-match-overlay"></div>
+<div class="absolute bottom-0 left-0 w-full p-md flex flex-col justify-end">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white font-bold flex items-center gap-xs">
+                                    Julian, 29
+                                    <span class="material-symbols-outlined text-[20px] text-primary" data-icon="verified">verified</span>
+</h3>
+<p class="font-body-md text-body-md text-white/90">Architect • 5 miles away</p>
+</div>
+<!-- FAB -->
+<button class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-[0_10px_30px_rgba(216,27,96,0.2)] hover:bg-surface-container-low transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[28px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="flex gap-base flex-wrap">
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Hiking</span>
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Jazz</span>
+<span class="bg-primary/20 backdrop-blur-md text-white px-3 py-1 rounded-full font-label-sm text-label-sm border border-white/20">Photography</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Joins (Vertical List/Bento style) -->
+<section class="mb-lg">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Joins</h2>
+<a class="font-label-md text-label-md text-primary hover:text-tertiary transition-colors" href="#">See all</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-md">
+<!-- Recent Card 1 -->
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Recent Join" class="w-full h-full object-cover" data-alt="A bright, cheerful photo of a young professional smiling naturally. The background is a minimalist office or cafe with soft, diffuse lighting. The person exudes optimism and readiness for connection. High quality, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD597XwkNTZ84FnpIjmp9prZLRGbNzt_40KXkhk02SLcNoA2ulJcGbZc8dXjIQ9nN1aHoKMaHv_gxtU5nJLwBfjflxZwFLGmQoVD3vc5QvhGAEkHq1rdzt7kdJYEWYoo7DtdyxF7NVC42tsuF1hJNv1_I0cvD355lwFxz8-YdkA5kYVUdSQegQli-jTnZRrKPlEnRE6OGhEnMyzgXD64zzbNBJDBpkTeFAJzbwnp2o2kO1PMGLXwPdfEG81aaJt3lUPKjtHAP013zMN"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-1 rounded-full font-label-sm text-[10px] tracking-wider uppercase shadow-sm">
+                            New
+                        </div>
+</div>
+<div class="p-sm">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Maya, 24</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Just joined Mingle</p>
+</div>
+</div>
+<!-- Recent Card 2 -->
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Recent Join" class="w-full h-full object-cover" data-alt="A relaxed, candid photo of someone enjoying an outdoor setting. The natural light casts soft shadows, creating a tactile and intimate feel. The person is dressed casually but stylishly. The vibe is welcoming and fresh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx3QaKluYhqYYiNFby0fAiNJGcZzNL0QZC8KIRdF_qW3RgtHkJuk6Y4X2mIQkW_Wn7YJlq-Bk1cdy21pZHX4fpfp6MNBlGkfs2c0mSJiZyKCOZ8bGFDbFqtGODdGEWH4tng6In1098Wg51dGIzu_chzBv_34JbNSrEpVjus-ok8a9Kh40pcN8BkVRP9QFU3-eoraUMEA77uMiXc4hocgP9osvJ7KHjY3reHRBo3sFPW8rabjMA8KsB2kOC1nmQH2rJ8FrImJ40m_Ur"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-1 rounded-full font-label-sm text-[10px] tracking-wider uppercase shadow-sm">
+                            New
+                        </div>
+</div>
+<div class="p-sm">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Leo, 28</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Loves photography</p>
+</div>
+</div>
+<!-- Recent Card 3 -->
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Recent Join" class="w-full h-full object-cover" data-alt="A portrait of an individual looking thoughtfully off-camera. The setting is a clean, well-lit modern space with subtle architectural details. The lighting emphasizes a polished, premium aesthetic suitable for a high-end platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsIjwdiKopx3GSZG5X2mlRC91cGm5bBj4AU6Tlwn5gX8GP9JW65cNUhaR-5IlhYoPpJueWBxuSQAbgOtxIU5OomRGjM9wsYw7JIZq8I8_YMaZFUeE3k6O8zwfmqy5FWGHtfkAPaxeCr2ma4z7C0T6ZxvTkxOr1Mlx88nVOQ_o_7b51_pj3Xidw8cq9oYg6_4o6kDajDVNk2MSiAi4bBDuHr78_em4JrwbaeDhzceJ-L38RheudDiwOadnGNemYjNRUfaVg7I9HIHrP"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-1 rounded-full font-label-sm text-[10px] tracking-wider uppercase shadow-sm">
+                            New
+                        </div>
+</div>
+<div class="p-sm">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Sofia, 25</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Coffee enthusiast</p>
+</div>
+</div>
+<!-- Recent Card 4 -->
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-40">
+<img alt="Recent Join" class="w-full h-full object-cover" data-alt="An energetic photo of someone mid-laugh in a brightly colored, minimalist setting. The mood is infectious and optimistic. The high-quality image uses expansive whitespace to let the subject shine, emphasizing a vibrant personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2nZ6XVhKAdvtMdexxWkeaScS7n0w5wjviEKVxtGi9fu-UMaiZoaHaw5DOul7L74VQtMzA7Ni_s7pagzKjGM0BeecWfY1Vm8t1y8ldDLpsP93ZO6ZloGnvJ4QoUyYwkPZeNOf3n7I_8RvESLy1JyNutZyOV5EA2kjTYabHdo_SDy8PWFfk-39r9CuSkEu8RLahVTpwnnw_hbub10frVpJ44clzBlxF-wBQY2fLqg2gk3ydY1jRxC2Tf_P1rqKMUo8q98t0YxXtWCq1"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-1 rounded-full font-label-sm text-[10px] tracking-wider uppercase shadow-sm">
+                            New
+                        </div>
+</div>
+<div class="p-sm">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Sam, 27</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">New to the city</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Visible on mobile, hidden on md+) -->
+<nav class="md:hidden bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-lg fixed bottom-0 w-full z-50 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 w-full px-2">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 transition-transform duration-150 p-2 rounded-xl w-16 h-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-16 h-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Chats (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-16 h-16 relative" href="#">
+<div class="absolute top-1 right-3 w-3 h-3 bg-primary rounded-full border-2 border-surface"></div>
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Chats</span>
+</a>
+<!-- Referrals (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-16 h-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Referrals</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-xl active:scale-90 transition-transform duration-150 p-2 w-16 h-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

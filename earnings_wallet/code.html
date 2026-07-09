@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Earnings &amp; Wallet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1a1c1c",
+                      "on-primary-container": "#fff2f3",
+                      "on-surface-variant": "#5a4044",
+                      "surface-container": "#eeeeee",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "on-primary-fixed-variant": "#90003b",
+                      "surface-tint": "#bc004f",
+                      "on-secondary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#8d22a9",
+                      "primary": "#b0004a",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#ffd9de",
+                      "outline": "#8e6f74",
+                      "on-tertiary-fixed-variant": "#790096",
+                      "on-tertiary-fixed": "#340042",
+                      "primary-container": "#d81b60",
+                      "tertiary-fixed-dim": "#f3aeff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#3f0016",
+                      "secondary-fixed-dim": "#e9c400",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary": "#705d00",
+                      "secondary-fixed": "#ffe16d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "inverse-primary": "#ffb2bf",
+                      "tertiary-fixed": "#fdd6ff",
+                      "secondary-container": "#fcd400",
+                      "inverse-surface": "#2f3131",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#e3bdc3",
+                      "on-secondary-container": "#6e5c00",
+                      "surface-dim": "#dadada",
+                      "tertiary-container": "#a941c4",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#fff1fc",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "md": "24px",
+                      "xl": "64px",
+                      "container-max": "1200px",
+                      "gutter": "20px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Montserrat"],
+                      "headline-xl": ["Montserrat"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "700"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #d81b60 0%, #8d22a9 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #d81b60 0%, #8d22a9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen pt-16 pb-32 md:pb-16 flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="A small, circular profile picture of an elegant young woman smiling warmly. The photo is well-lit with soft natural light, set against a neutral pale background, matching the high-end Mingle dating app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbhCxD0_7QFx9fLPW87cg86mkoEsX38U37GmOpBHRmcEQNx-t812dV9m1olPCa3lvIbTPtVtX6dKZ38PvfPg42xB2uKeZ_LamxCkCcAPoQ7vQcor2s3fjCW73NtGCX7wIRBE1p5F75EBA43oFE2tarinZmvUO_SZZ7ybIWtzowwHjXPpAN2JoGT1gPu88zGYYJoSR6Ib6FPRzvmL2glbdXVXnc7wSxv-6nWD_PlPGgCSfE1kX8-t6NkjW9j11jyavqWw7t2kIWvN1O"/>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">
+                Mingle
+            </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-3xl mx-auto px-gutter py-lg flex flex-col gap-lg">
+<!-- Hero Balance Section -->
+<section class="flex flex-col items-center text-center space-y-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface-variant">Earnings &amp; Wallet</h1>
+<div class="glass-panel w-full rounded-2xl p-xl shadow-[0_10px_30px_rgba(216,27,96,0.1)] flex flex-col items-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container rounded-full blur-3xl opacity-20 -mr-10 -mt-10 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-40 h-40 bg-tertiary-container rounded-full blur-3xl opacity-10 -ml-10 -mb-10 pointer-events-none"></div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2">Available Balance</span>
+<div class="font-headline-xl text-headline-xl gradient-text tracking-tight">KSh 2,500</div>
+<button class="mt-md w-full md:w-auto px-xl h-14 gradient-primary rounded-xl text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(216,27,96,0.2)] hover:scale-[0.98] transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+                    Withdraw to M-Pesa
+                </button>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-sm md:gap-md">
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col">
+<div class="flex items-center gap-2 mb-sm text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Total Earned</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">KSh 12,400</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col">
+<div class="flex items-center gap-2 mb-sm text-primary-container">
+<span class="material-symbols-outlined">hourglass_empty</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Pending Rewards</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">KSh 450</div>
+</div>
+</section>
+<!-- Transaction History -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-end mb-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Transaction History</h2>
+<button class="font-label-sm text-label-sm text-primary hover:underline">View All</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden">
+<div class="flex flex-col">
+<!-- Deposit -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors border-b border-surface-container">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Referral Bonus</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today, 10:42 AM</span>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-secondary-container text-right">
+                            +KSh 500
+                        </div>
+</div>
+<!-- Withdrawal -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors border-b border-surface-container">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-error-container/50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">arrow_upward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Withdraw to M-Pesa</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday, 4:15 PM</span>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface text-right">
+                            -KSh 1,500
+                        </div>
+</div>
+<!-- Deposit -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Referral Bonus</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 12, 2:30 PM</span>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-secondary-container text-right">
+                            +KSh 500
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 pb-safe bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-lg border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 w-full px-2">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl p-2 active:scale-90 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl p-2 active:scale-90 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl p-2 active:scale-90 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Chats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container/10 rounded-xl p-2 active:scale-90 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Referrals</span>
+</button>
+<!-- Assuming Earnings/Wallet falls under Profile context for Nav -->
+<button class="flex flex-col items-center justify-center text-primary font-bold hover:bg-primary-container/10 rounded-xl p-2 active:scale-90 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

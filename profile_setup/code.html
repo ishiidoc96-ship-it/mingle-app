@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Complete Your Profile - Mingle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#fff2f3",
+                        "on-surface-variant": "#5a4044",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#ffb2bf",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#90003b",
+                        "surface-tint": "#bc004f",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#8d22a9",
+                        "primary": "#b0004a",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#ffd9de",
+                        "outline": "#8e6f74",
+                        "on-tertiary-fixed-variant": "#790096",
+                        "on-tertiary-fixed": "#340042",
+                        "primary-container": "#d81b60",
+                        "tertiary-fixed-dim": "#f3aeff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3f0016",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#705d00",
+                        "secondary-fixed": "#ffe16d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "inverse-primary": "#ffb2bf",
+                        "tertiary-fixed": "#fdd6ff",
+                        "secondary-container": "#fcd400",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e3bdc3",
+                        "on-secondary-container": "#6e5c00",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#a941c4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fff1fc",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "gutter": "20px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .input-focus-ring:focus-within {
+            box-shadow: 0 0 0 2px var(--color-primary-container);
+            border-color: transparent;
+        }
+
+        .avatar-upload-hover:hover .upload-overlay {
+            opacity: 1;
+        }
+
+        /* Subtle ambient background */
+        body {
+            background: linear-gradient(135deg, #f9f9f9 0%, #fff2f3 100%);
+            min-height: 100vh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md antialiased overflow-x-hidden pb-32">
+<!-- Header / Top Navigation (Suppressed for transactional flow, but keeping a minimal back/brand header) -->
+<header class="w-full px-gutter h-16 flex items-center justify-between max-w-container-max mx-auto pt-safe">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary font-bold">Mingle</span>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<main class="max-w-md mx-auto px-gutter pt-lg pb-xl">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-2 mb-lg">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-variant rounded-full"></div>
+</div>
+<div class="text-center mb-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Complete Your Profile</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Let's make sure others can find you.</p>
+</div>
+<!-- Avatar Upload -->
+<div class="flex justify-center mb-10">
+<div class="relative group avatar-upload-hover cursor-pointer">
+<div class="w-32 h-32 rounded-full overflow-hidden shadow-[0_10px_30px_rgba(216,27,96,0.15)] bg-surface-container-high border-4 border-surface">
+<div class="w-full h-full flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[40px] mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+</div>
+</div>
+<!-- Upload overlay -->
+<div class="upload-overlay absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">add_photo_alternate</span>
+</div>
+<!-- Floating + Icon (always visible) -->
+<button class="absolute bottom-0 right-0 w-10 h-10 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center border-2 border-surface hover:bg-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</div>
+<!-- Form Section -->
+<form class="space-y-6">
+<!-- Name -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="name">Name</label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<input class="w-full bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl px-4 py-3 outline-none transition-colors focus:border-transparent placeholder:text-outline/60 shadow-sm" id="name" placeholder="First Name" required="" type="text"/>
+</div>
+</div>
+<!-- Age & Gender Row -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="age">Age</label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<input class="w-full bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl px-4 py-3 outline-none transition-colors focus:border-transparent placeholder:text-outline/60 shadow-sm" id="age" max="120" min="18" placeholder="18+" required="" type="number"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="gender">Gender</label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<select class="w-full appearance-none bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl px-4 py-3 outline-none transition-colors focus:border-transparent shadow-sm" id="gender" required="">
+<option class="text-outline/60" disabled="" selected="" value="">Select...</option>
+<option value="woman">Woman</option>
+<option value="man">Man</option>
+<option value="nonbinary">Non-binary</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interested In -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="interested">Interested In</label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<select class="w-full appearance-none bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl px-4 py-3 outline-none transition-colors focus:border-transparent shadow-sm" id="interested" required="">
+<option class="text-outline/60" disabled="" selected="" value="">Select preferences...</option>
+<option value="women">Women</option>
+<option value="men">Men</option>
+<option value="everyone">Everyone</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Location -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="location">Location</label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 0;">location_on</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:border-transparent placeholder:text-outline/60 shadow-sm" id="location" placeholder="City, Country" required="" type="text"/>
+</div>
+</div>
+<!-- Bio -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="bio">Bio <span class="text-outline/60 font-normal">(Optional)</span></label>
+<div class="relative input-focus-ring rounded-xl transition-all duration-200">
+<textarea class="w-full bg-surface-container-lowest border border-surface-variant text-on-surface font-body-md text-body-md rounded-xl px-4 py-3 outline-none transition-colors focus:border-transparent placeholder:text-outline/60 shadow-sm resize-none" id="bio" placeholder="A little bit about yourself..." rows="4"></textarea>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-0 w-full p-gutter glass-panel z-50 pb-safe md:static md:bg-transparent md:backdrop-blur-none md:border-none md:p-0 md:mt-10">
+<div class="max-w-md mx-auto">
+<button class="w-full h-14 bg-gradient-to-b from-primary-container to-tertiary text-on-primary-container rounded-xl font-label-md text-label-md shadow-[0_10px_30px_rgba(216,27,96,0.2)] hover:opacity-95 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2" type="button">
+                        Finish Setup
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+</main>
+<script>
+        // Simple micro-interaction for input fields
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.parentElement.classList.add('shadow-[0_4px_20px_rgba(216,27,96,0.1)]');
+            });
+            element.addEventListener('blur', function() {
+                this.parentElement.classList.remove('shadow-[0_4px_20px_rgba(216,27,96,0.1)]');
+            });
+        });
+    </script>
+</body></html>

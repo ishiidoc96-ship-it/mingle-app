@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mingle - Splash</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1a1c1c",
+                      "on-primary-container": "#fff2f3",
+                      "on-surface-variant": "#5a4044",
+                      "surface-container": "#eeeeee",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "on-primary-fixed-variant": "#90003b",
+                      "surface-tint": "#bc004f",
+                      "on-secondary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#8d22a9",
+                      "primary": "#b0004a",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#ffd9de",
+                      "outline": "#8e6f74",
+                      "on-tertiary-fixed-variant": "#790096",
+                      "on-tertiary-fixed": "#340042",
+                      "primary-container": "#d81b60",
+                      "tertiary-fixed-dim": "#f3aeff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#3f0016",
+                      "secondary-fixed-dim": "#e9c400",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary": "#705d00",
+                      "secondary-fixed": "#ffe16d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "inverse-primary": "#ffb2bf",
+                      "tertiary-fixed": "#fdd6ff",
+                      "secondary-container": "#fcd400",
+                      "inverse-surface": "#2f3131",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#e3bdc3",
+                      "on-secondary-container": "#6e5c00",
+                      "surface-dim": "#dadada",
+                      "tertiary-container": "#a941c4",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#fff1fc",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "md": "24px",
+                      "xl": "64px",
+                      "container-max": "1200px",
+                      "gutter": "20px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-xl": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .animate-fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-pulse {
+            animation: softPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes softPulse {
+            0% { filter: drop-shadow(0 0 15px rgba(216, 27, 96, 0.2)); transform: scale(1); }
+            100% { filter: drop-shadow(0 0 30px rgba(216, 27, 96, 0.5)); transform: scale(1.02); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface h-screen w-full flex flex-col items-center justify-center relative overflow-hidden antialiased">
+<!-- Ambient Background Glow -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -right-[10%] w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] rounded-full bg-primary/5 blur-[100px]"></div>
+<div class="absolute -bottom-[10%] -left-[10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] rounded-full bg-tertiary/5 blur-[100px]"></div>
+</div>
+<!-- Center Content -->
+<main class="flex flex-col items-center justify-center z-10 w-full px-gutter">
+<!-- Logo Symbol -->
+<div class="animate-fade-in-up logo-pulse mb-md">
+<svg class="text-primary-container" fill="none" height="96" viewbox="0 0 96 96" width="96" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 72V36C24 29.3726 29.3726 24 36 24C40.6698 24 44.7176 26.6663 46.5415 30.6558C47.4143 32.5651 50.5857 32.5651 51.4585 30.6558C53.2824 26.6663 57.3302 24 62 24C68.6274 24 74 29.3726 74 36V72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<path d="M49 60C49 60 49 76 36 76C29.3726 76 24 70.6274 24 64" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<path d="M49 60C49 60 49 76 62 76C68.6274 76 74 70.6274 74 64" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<!-- Heart center accent -->
+<circle cx="49" cy="48" fill="currentColor" r="8"></circle>
+</svg>
+</div>
+<!-- Wordmark -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-sm tracking-tight animate-fade-in-up delay-100">
+            Mingle
+        </h1>
+<!-- Slogan -->
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center max-w-[280px] animate-fade-in-up delay-300">
+            Meet. Connect. Earn.
+        </p>
+</main>
+<!-- Bottom Loading Indicator -->
+<div class="absolute bottom-16 flex flex-col items-center justify-center z-10 animate-fade-in-up delay-500">
+<div class="w-10 h-10 rounded-full border-4 border-surface-container-high border-t-primary-container animate-spin shadow-[0_4px_20px_rgba(216,27,96,0.15)]"></div>
+</div>
+</body></html>
