@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const apiBase = import.meta.env.VITE_API_URL
-const isLocal = import.meta.env.DEV || !apiBase
+const isLocal = import.meta.env.DEV
 
 const api = axios.create({
-  baseURL: isLocal ? 'http://localhost:3001/api' : apiBase,
+  baseURL: isLocal ? 'http://localhost:3001/api' : (apiBase || '/api'),
   headers: { 'Content-Type': 'application/json' }
 })
 
