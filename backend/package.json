@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js",
-    "build": "cd ../public/admin && npm install"
+    "dev": "node --watch server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",

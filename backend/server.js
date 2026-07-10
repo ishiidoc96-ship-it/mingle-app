@@ -3,7 +3,6 @@ import express from 'express';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { initDb } from './db/db.js';
 import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import referralRoutes from './routes/referrals.js';
@@ -59,13 +58,15 @@ if (!process.env.VERCEL) {
     });
   });
 
+  const { initDb } = await import('./db/db.js');
   await initDb().catch(err => {
     console.error('Failed to initialize database:', err);
     process.exit(1);
   });
-  app.listen(PORT, () => {
-    console.log(`Mingle running at http://localhost:${PORT}`);
-  });
 }
+
+app.listen(PORT, () => {
+  console.log(`Mingle running at http://localhost:${PORT}`);
+});
 
 export default app;
