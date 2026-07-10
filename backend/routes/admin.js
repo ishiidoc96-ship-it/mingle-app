@@ -88,7 +88,7 @@ router.post('/upload-photos', adminOnly, async (req, res) => {
       await supabase.from('users').update({ avatar_url: urls[i % urls.length], updated_at: new Date().toISOString() }).eq('id', users[i].id);
     }
 
-    const allMappings = {};
+    let allMappings = {};
     try { allMappings = tryLoadMapping() || {}; } catch (_) {}
     urls.forEach((url, idx) => { allMappings[`uploaded_${Date.now()}_${idx}`] = url; });
     saveMappingToFile(allMappings);
@@ -111,7 +111,7 @@ router.post('/seed-urls', adminOnly, async (req, res) => {
     await supabase.from('users').update({ avatar_url: urls[i % urls.length], updated_at: new Date().toISOString() }).eq('id', users[i].id);
   }
 
-  const allMappings = {};
+  let allMappings = {};
   try { allMappings = tryLoadMapping() || {}; } catch (_) {}
   urls.forEach((url, idx) => { allMappings[`uploaded_${idx}`] = url; });
   saveMappingToFile(allMappings);
