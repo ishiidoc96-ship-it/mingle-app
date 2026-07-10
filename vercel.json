@@ -4,7 +4,10 @@
     "frontend": {
       "root": "frontend",
       "framework": "vite",
-      "outputDirectory": "dist"
+      "outputDirectory": "dist",
+      "rewrites": [
+        { "source": "/((?!assets/|admin/).*)", "destination": "/index.html" }
+      ]
     },
     "backend": {
       "root": "backend",
