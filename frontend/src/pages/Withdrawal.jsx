@@ -38,7 +38,7 @@ export default function Withdrawal() {
   }
 
   return (
-    <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col">
+    <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col md:ml-[240px]">
       <DesktopSidebar />
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
         <div className="flex items-center px-gutter h-16 max-w-container-max mx-auto">

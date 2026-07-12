@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import api from '../api'
 import LoadingState from '../components/LoadingState'
 import EmptyState from '../components/EmptyState'
+import DesktopSidebar from '../components/DesktopSidebar'
 
 export default function Notifications() {
   const navigate = useNavigate()
@@ -23,7 +24,8 @@ export default function Notifications() {
   }
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 md:ml-[240px]">
+      <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-outline-variant/20">
         <div className="flex items-center justify-between px-gutter h-16 max-w-container-max mx-auto">
           <div className="flex items-center gap-2">
@@ -43,7 +45,7 @@ export default function Notifications() {
             {notifications.map(n => (
               <div key={n.id} onClick={async () => {
                 if (!n.read) { try { await api.put(`/notifications/${n.id}/read`); setNotifications(prev => prev.map(x => x.id === n.id ? { ...x, read: true } : x)) } catch {} }
-                if (n.type === 'match') navigate(`/chat/${n.data?.matchId}`)
+                if (n.type === 'match') navigate(`/chats/${n.data?.matchId}`)
               }}
                 className={`p-4 rounded-2xl border cursor-pointer transition-all hover:-translate-y-0.5 ${
                   n.read ? 'bg-surface-container-lowest border-outline-variant/30' : 'bg-primary/5 border-primary/20'

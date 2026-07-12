@@ -19,7 +19,8 @@ api.interceptors.response.use(
   error => {
     if (error.response?.status === 401) {
       localStorage.removeItem('mingle_token')
-      if (!isLocal) window.location.href = '/login'
+      localStorage.removeItem('mingle_userId')
+      window.location.href = '/login'
     }
     return Promise.reject(error)
   }

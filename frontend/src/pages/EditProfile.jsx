@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 import Avatar from '../components/Avatar'
+import DesktopSidebar from '../components/DesktopSidebar'
 
 const CLOUD_NAME = 'dilrcexxe'
 const UPLOAD_PRESET = 'MingleKe'
@@ -55,7 +56,8 @@ export default function EditProfile() {
   }
 
   return (
-    <div className="bg-background text-on-background min-h-screen font-body-md antialiased">
+    <div className="bg-background text-on-background min-h-screen font-body-md antialiased md:ml-[240px]">
+      <DesktopSidebar />
       <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
         <div className="flex items-center px-gutter h-16 max-w-container-max mx-auto">
           <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">

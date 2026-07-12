@@ -4,6 +4,7 @@ import api from '../api'
 import { useAuth } from '../context/AuthContext'
 import Avatar from '../components/Avatar'
 import DesktopSidebar from '../components/DesktopSidebar'
+import BottomNav from '../components/BottomNav'
 
 export default function Profile() {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ export default function Profile() {
   ]
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 md:ml-[240px]">
       <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-outline-variant/20">
         <div className="flex items-center justify-between px-gutter h-16 max-w-container-max mx-auto">
@@ -61,7 +62,7 @@ export default function Profile() {
             ))}
           </div>
           <div className="flex gap-3 mt-6 w-full max-w-md">
-            <button onClick={() => navigate('/profile/edit')}
+            <button onClick={() => navigate('/edit-profile')}
               className="flex-1 h-12 rounded-xl border border-primary text-primary font-label-md text-label-md hover:bg-primary/10 transition-colors flex items-center justify-center gap-2">
               <span className="material-symbols-outlined text-[18px]">edit</span>Edit Profile
             </button>
@@ -110,6 +111,7 @@ export default function Profile() {
           )}
         </div>
       </main>
+      <BottomNav />
     </div>
   )
 }

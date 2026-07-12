@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../api'
 import DesktopSidebar from '../components/DesktopSidebar'
+import BottomNav from '../components/BottomNav'
 import LoadingState from '../components/LoadingState'
 import EmptyState from '../components/EmptyState'
 import Avatar from '../components/Avatar'
@@ -26,7 +27,7 @@ export default function HomeFeed() {
   }, [])
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 md:ml-[240px]">
       <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-outline-variant/20">
         <div className="flex items-center justify-between px-gutter h-16 max-w-container-max mx-auto">
@@ -89,32 +90,7 @@ export default function HomeFeed() {
           ))}
         </div>
       </main>
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-surface via-surface/95 to-transparent pt-8 pb-safe pointer-events-none">
-        <div className="max-w-[500px] mx-auto pointer-events-auto">
-          <div className="flex justify-around items-center h-16 bg-surface-container-lowest mx-4 rounded-full shadow-lg border border-outline-variant/30">
-            <NavItem icon="explore" label="Discover" active onClick={() => navigate('/')} />
-            <NavItem icon="chat_bubbles" label="Chats" onClick={() => navigate('/chats')} />
-            <div className="relative -mt-6">
-              <button onClick={() => navigate('/explore')}
-                className="w-14 h-14 rounded-full bg-gradient-to-b from-primary to-tertiary text-on-primary flex items-center justify-center shadow-lg hover:opacity-90 active:scale-95 transition-all">
-                <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
-              </button>
-            </div>
-            <NavItem icon="attach_money" label="Earn" onClick={() => navigate('/earnings')} />
-            <NavItem icon="person" label="Profile" onClick={() => navigate('/profile')} />
-          </div>
-        </div>
-      </div>
+      <BottomNav />
     </div>
-  )
-}
-
-function NavItem({ icon, label, active, onClick }) {
-  return (
-    <button onClick={onClick} className="flex flex-col items-center gap-0.5 px-3 py-1 group transition-colors">
-      <span className={`material-symbols-outlined text-[24px] transition-colors ${active ? 'text-primary' : 'text-on-surface-variant group-hover:text-primary'}`}
-        style={active ? { fontVariationSettings: "'FILL' 1" } : {}}>{icon}</span>
-      <span className={`font-label-xs text-label-xs transition-colors ${active ? 'text-primary' : 'text-on-surface-variant group-hover:text-primary'}`}>{label}</span>
-    </button>
   )
 }

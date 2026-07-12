@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import api from '../api'
 import EmptyState from '../components/EmptyState'
 import LoadingState from '../components/LoadingState'
+import DesktopSidebar from '../components/DesktopSidebar'
 
 export default function EarningsHistory() {
   const navigate = useNavigate()
@@ -33,7 +34,8 @@ export default function EarningsHistory() {
   ]
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen md:ml-[240px]">
+      <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="flex items-center px-gutter h-16 max-w-container-max mx-auto">
           <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">

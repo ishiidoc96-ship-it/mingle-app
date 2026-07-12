@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 import DesktopSidebar from '../components/DesktopSidebar'
+import BottomNav from '../components/BottomNav'
 
 export default function ReferralDashboard() {
   const navigate = useNavigate()
@@ -34,7 +35,7 @@ export default function ReferralDashboard() {
   }
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 md:ml-[240px]">
       <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-outline-variant/20">
         <div className="flex items-center justify-between px-gutter h-16 max-w-container-max mx-auto">
@@ -136,6 +137,7 @@ export default function ReferralDashboard() {
           ))}
         </div>
       </main>
+      <BottomNav />
     </div>
   )
 }

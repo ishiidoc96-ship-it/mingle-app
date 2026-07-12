@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
+import DesktopSidebar from '../components/DesktopSidebar'
 
 export default function Settings() {
   const navigate = useNavigate()
@@ -19,7 +20,8 @@ export default function Settings() {
   }
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 md:ml-[240px]">
+      <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="flex items-center px-gutter h-16 max-w-container-max mx-auto">
           <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95 text-on-surface-variant">
@@ -61,8 +63,8 @@ export default function Settings() {
           </h2>
           <div className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/30 shadow-sm space-y-2">
             <MenuItem label="Edit profile" icon="edit" onClick={() => navigate('/edit-profile')} />
-            <MenuItem label="Change password" icon="lock" onClick={() => navigate('/change-password')} />
-            <MenuItem label="Blocked users" icon="block" onClick={() => navigate('/blocked-users')} />
+            <MenuItem label="Change password" icon="lock" onClick={() => show('Contact support to change password', 'info')} />
+            <MenuItem label="Blocked users" icon="block" onClick={() => show('No blocked users', 'info')} />
             <MenuItem label="Help & Support" icon="help" onClick={() => navigate('/help')} />
           </div>
         </section>

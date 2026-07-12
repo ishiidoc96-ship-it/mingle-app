@@ -4,6 +4,7 @@ import api from '../api'
 import EmptyState from '../components/EmptyState'
 import LoadingState from '../components/LoadingState'
 import Avatar from '../components/Avatar'
+import DesktopSidebar from '../components/DesktopSidebar'
 
 export default function Search() {
   const navigate = useNavigate()
@@ -32,7 +33,8 @@ export default function Search() {
   useEffect(() => { handleSearch(true) }, [])
 
   return (
-    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+    <div className="bg-surface text-on-surface font-body-md antialiased min-h-screen md:ml-[240px]">
+      <DesktopSidebar />
       <header className="bg-surface/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="flex items-center gap-2 px-gutter h-16 max-w-container-max mx-auto">
           <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant">
