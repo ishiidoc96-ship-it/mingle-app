@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 
 export default function SignUp() {
   const navigate = useNavigate()
-  const { register } = useAuth()
+  const { register, user } = useAuth()
   const { show } = useToast()
   const [form, setForm] = useState({ name: '', email: '', phone: '', password: '', confirmPassword: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
   const update = field => e => setForm({ ...form, [field]: e.target.value })
+
+  useEffect(() => {
+    if (user) {
+      show('Account created!', 'success')
+      navigate('/profile-setup', { replace: true })
+    }
+  }, [user, navigate, show])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,11 +29,8 @@ export default function SignUp() {
     setLoading(true)
     try {
       await register({ name: form.name, email: form.email, phone: form.phone, password: form.password })
-      show('Account created!', 'success')
-      navigate('/referral-code', { replace: true })
     } catch (err) {
       setError(err.response?.data?.error || 'Registration failed. Please try again.')
-    } finally {
       setLoading(false)
     }
   }

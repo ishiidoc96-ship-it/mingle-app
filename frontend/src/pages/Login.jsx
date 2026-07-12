@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 
 export default function Login() {
   const navigate = useNavigate()
-  const { login } = useAuth()
+  const { login, user } = useAuth()
   const { show } = useToast()
   const [identifier, setIdentifier] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (user && !error) {
+      show('Welcome back!', 'success')
+      navigate('/home', { replace: true })
+    }
+  }, [user, navigate, show, error])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,11 +27,8 @@ export default function Login() {
     setLoading(true)
     try {
       await login(identifier, password)
-      show('Welcome back!', 'success')
-      navigate('/home', { replace: true })
     } catch (err) {
       setError(err.response?.data?.error || 'Login failed. Check your credentials.')
-    } finally {
       setLoading(false)
     }
   }
